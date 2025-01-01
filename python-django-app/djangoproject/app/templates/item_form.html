@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" value="{{ item.name|default:'' }}"><br>
+    <textarea name="description" placeholder="Description">{{ item.description|default:'' }}</textarea><br>
+    <input type="number" step="0.01" name="price" placeholder="Price" value="{{ item.price|default:'' }}"><br>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
